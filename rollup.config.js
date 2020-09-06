@@ -35,6 +35,7 @@ export default {
 				dedupe: ['svelte']
 			}),
 			commonjs(),
+			json(),
 
 			legacy && babel({
 				extensions: ['.js', '.mjs', '.html', '.svelte'],
@@ -78,7 +79,8 @@ export default {
 			resolve({
 				dedupe: ['svelte']
 			}),
-			commonjs()
+			commonjs(),
+			json(),
 		],
 		external: Object.keys(pkg.dependencies).concat(require('module').builtinModules),
 
@@ -96,6 +98,7 @@ export default {
 				'process.env.NODE_ENV': JSON.stringify(mode)
 			}),
 			commonjs(),
+			json(),
 			!dev && terser()
 		],
 

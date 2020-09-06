@@ -1,7 +1,10 @@
+<script>
+	import { name } from "../../static/manifest.json";
+	import * as data from "../data/data.json";
+</script>
+
 <svelte:head>
-	<title>About</title>
+	<title>{name}</title>
 </svelte:head>
 
-<h1>About this site</h1>
-
-<p>This is the 'about' page. There's not much here.</p>
+<div>{data}</div>
